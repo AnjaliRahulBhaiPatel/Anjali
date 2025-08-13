@@ -1,0 +1,39 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#4f46e5, #2d2b88);
+    animation: pulse 8s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% { background: radial-gradient(#4f46e5, #2d2b88); }
+    50% { background: radial-gradient(#6366f1, #3b39a1); }
+    100% { background: radial-gradient(#4f46e5, #2d2b88); }
+}
+
+.content {
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}

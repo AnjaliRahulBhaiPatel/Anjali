@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Checker Pro</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <h1>🚀 Resume Checker Pro</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" accept="application/pdf" required>
+            <button type="submit">Analyze My Resume</button>
+        </form>
+
+        {% if uploaded %}
+        <h2>✅ Keywords Found:</h2>
+        <ul>{% for kw in found %}<li>{{ kw }}</li>{% endfor %}</ul>
+
+        <h2>❌ Missing Keywords:</h2>
+        <ul>{% for kw in missing %}<li>{{ kw }}</li>{% endfor %}</ul>
+
+        <h2>📈 Score: {{ score }}%</h2>
+
+        <h2>💼 Job Suggestions:</h2>
+        <ul>{% for job in suggestions %}<li>{{ job }}</li>{% endfor %}</ul>
+
+        <h2>🛠️ Resume Improvement Tips:</h2>
+        <ul>{% for tip in improvements %}<li>{{ tip }}</li>{% endfor %}</ul>
+        {% endif %}
+    </div>
+</body>
+</html>
